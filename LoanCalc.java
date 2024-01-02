@@ -1,6 +1,3 @@
-/**
-* Computes the periodical payment necessary to re-pay a given loan.
-*/
 public class LoanCalc {
 	
 	static double epsilon = 0.001;  // The computation tolerance (estimation error)
@@ -39,8 +36,13 @@ public class LoanCalc {
 	*/
 	// Side effect: modifies the class variable iterationCounter.
     public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {  
-    	// Replace the following statement with your code
-    	return 0;
+        double x = loan / n  ;
+        while ( loan * Math.pow ( 1 + rate, n ) - (x * n) >= 0 ) {
+            x += 1 ;
+            iterationCounter ++ ; 
+
+        }
+    	return x;
     }
     
     /**
@@ -51,8 +53,21 @@ public class LoanCalc {
 	*/
 	// Side effect: modifies the class variable iterationCounter.
     public static double bisectionSolver(double loan, double rate, int n, double epsilon) {  
-    	// Replace the following statement with your code
-    	return 0;
+    	double h = loan + (loan * rate) + 1 ; 
+        double l = loan / n ;
+        double x = ( h + l ) / 2 ;  
+        iterationCounter = 0 ; 
+        while ( h - l > epsilon ) {
+            if ( (loan * Math.pow ( 1 + rate, n ) - (l * n) ) * (loan * Math.pow ( 1 + rate, n ) - (x * n) )  > 0 ) {
+               l = x ;
+            }
+            else {
+                    h = x ; 
+                }
+            x = ( h + l ) / 2 ;
+            iterationCounter ++ ; 
+            } 
+    	return x;
     }
 	
 	/**
