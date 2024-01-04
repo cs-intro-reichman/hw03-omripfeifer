@@ -25,7 +25,7 @@ public class Calendar0 {
 	private static void nDaysInMonthTest(int year) {
 	for ( int month = 1; month <= 12; month++){
 	int days = nDaysInMonth(month, isLeapYear(year));
-	System.out.println(" Month " + month + " has " + days + " days") ;
+	System.out.println("Month " + month + " has " + days + " days") ;
 	  }
 	}
             
