@@ -43,9 +43,9 @@ public class Calendar {
 	 // Side effects: changes the static variables dayOfMonth, month, year, dayOfWeek, nDaysInMonth.
 	 private static void advance() {
 		if (dayOfWeek == 1 && dayOfMonth == 1 ){
-			System.out.println( dayOfMonth + " /" + month + " /" + year + " Sunday");	
+			System.out.println( dayOfMonth + "/" + month + "/" + year + " Sunday");	
 		} else {
-               System.out.println( dayOfMonth + " /" + month + " /" + year );
+               System.out.println( dayOfMonth + "/" + month + "/" + year );
 		}
 		if ( dayOfWeek < 7 ){
            dayOfWeek ++ ; 
