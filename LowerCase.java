@@ -10,17 +10,20 @@ public class LowerCase {
     * except that all the upper-case letters are converted to lower-case letters.
     * Non-letter characters are left as is.
     */
-    public static String lowerCase(String s) {
-        String answer = "";
-        for(int i = 0; i < s.length(); i++){
-            if(s.charAt(i) > 64 && s.charAt(i) < 91){
-                answer = answer + (char)(s.charAt(i) + 32);
-
-            }
-            else{
-                answer = answer + s.charAt(i);
-            }
+    public static String lowerCase(String str) {
+        String lowstr = "" ;
+        int a = str.length();
+        int i = 0 ;
+        while ( i < a ) {
+            if ( str.charAt(i) >= 'A' && str.charAt(i) <= 'Z' ) {
+                int decimalValue = 32 + (int) str.charAt(i);
+                char character = (char) decimalValue;
+                lowstr += character ;
+            } else {
+                lowstr += str.charAt(i) ;
+            } 
+            i ++; 
         }
-        return answer;
+        return lowstr;
     }
 }
