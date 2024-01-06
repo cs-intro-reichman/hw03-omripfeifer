@@ -42,7 +42,7 @@ public class Calendar {
 	 // If the month changes, sets the number of days in this month.
 	 // Side effects: changes the static variables dayOfMonth, month, year, dayOfWeek, nDaysInMonth.
 	 private static void advance() {
-		if (dayOfWeek == 1 && dayOfMonth == 1 ){
+		if (dayOfWeek == 1 ){
 			System.out.println( dayOfMonth + "/" + month + "/" + year + " Sunday");	
 		} else {
                System.out.println( dayOfMonth + "/" + month + "/" + year );
